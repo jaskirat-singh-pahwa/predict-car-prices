@@ -1,0 +1,25 @@
+car_prices:
+  run_type:
+    train: True
+    predict:
+      user_given_data_test: True
+
+
+train_car_prices:
+  models:
+    - Random_Forest
+    - XG_Boost
+  train_percentage: 70
+  save_models_path: models/
+  full_data_path_raw: input/raw/autos.csv
+
+
+predict_car_prices:
+  user_given_data_path_raw: input/raw/user_data/
+  model: Random_Forest
+  predict_output_path: output/user_data/
+  schema:
+
+
+
+
