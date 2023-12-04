@@ -16,7 +16,7 @@ def main(argv) -> None:
     config_file_path: str = args["config_file"]
     logger.info(f"Config file path given: {config_file_path}")
 
-    run_app(config_file=config_file_path)
+    run_app(config_file_path=config_file_path)
 
 
 if __name__ == "__main__":
