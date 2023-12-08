@@ -567,61 +567,61 @@ def train_models(df: pd.DataFrame) -> None:
     #     y_test=y_test
     # )
     #
-    create_baseline_knn_regressor(
-        X_train=x_train,
-        y_train=y_train,
-        X_test=x_test,
-        y_test=y_test
-    )
-
-    create_fine_tuned_knn_regressor(
-        X_train=x_train,
-        y_train=y_train,
-        X_test=x_test,
-        y_test=y_test
-    )
-
-    create_baseline_xg_boost_regressor(
-        X_train=x_train,
-        y_train=y_train,
-        X_test=x_test,
-        y_test=y_test
-    )
-
-    create_fine_tuned_xg_boost_regressor(
-        X_train=x_train,
-        y_train=y_train,
-        X_test=x_test,
-        y_test=y_test
-    )
-
-    # create_baseline_light_gbm_regressor(
+    # create_baseline_knn_regressor(
     #     X_train=x_train,
     #     y_train=y_train,
     #     X_test=x_test,
     #     y_test=y_test
     # )
     #
-    # create_fine_tuned_light_gbm_regressor(
+    # create_fine_tuned_knn_regressor(
     #     X_train=x_train,
     #     y_train=y_train,
     #     X_test=x_test,
     #     y_test=y_test
     # )
     #
-    # create_baseline_lasso_regressor(
+    # create_baseline_xg_boost_regressor(
     #     X_train=x_train,
     #     y_train=y_train,
     #     X_test=x_test,
     #     y_test=y_test
     # )
     #
-    # create_fine_tuned_lasso_regressor(
+    # create_fine_tuned_xg_boost_regressor(
     #     X_train=x_train,
     #     y_train=y_train,
     #     X_test=x_test,
     #     y_test=y_test
     # )
+
+    create_baseline_light_gbm_regressor(
+        X_train=x_train,
+        y_train=y_train,
+        X_test=x_test,
+        y_test=y_test
+    )
+
+    create_fine_tuned_light_gbm_regressor(
+        X_train=x_train,
+        y_train=y_train,
+        X_test=x_test,
+        y_test=y_test
+    )
+
+    create_baseline_lasso_regressor(
+        X_train=x_train,
+        y_train=y_train,
+        X_test=x_test,
+        y_test=y_test
+    )
+
+    create_fine_tuned_lasso_regressor(
+        X_train=x_train,
+        y_train=y_train,
+        X_test=x_test,
+        y_test=y_test
+    )
     #
     # create_baseline_gbr(
     #     X_train=x_train,
