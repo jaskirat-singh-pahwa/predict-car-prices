@@ -11,6 +11,9 @@ pandas="*"
 matplotlib="*"
 seaborn="*"
 PyYAML="*"
+joblib="*"
+xgboost="*"
+lightgbm="*"
 
 [dev-packages]
 

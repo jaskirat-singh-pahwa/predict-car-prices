@@ -4,6 +4,7 @@ from yaml.loader import SafeLoader
 
 from logger import get_logger
 from data_cleaning import get_cleaned_data
+from modelling import train_models
 
 
 # pd.set_option("display.max_colwidth", 100)
@@ -27,3 +28,6 @@ def run_app(config_file_path: str):
         logger.info(f"Raw data path: {raw_used_cars_data_path}")
 
         cleaned_data: pd.DataFrame = get_cleaned_data(data_path=raw_used_cars_data_path)
+        logger.info(cleaned_data.shape)
+
+        train_models(df=cleaned_data)
