@@ -48,7 +48,7 @@ logger = get_logger(module_name="modelling")
 
 
 def save_trained_model_in_local(model, file_name_and_path: str) -> None:
-    joblib.dump(model, file_name_and_path, compress=("zlib", 3))
+    joblib.dump(model, file_name_and_path)
 
 
 def get_train_test_split_data(
@@ -539,89 +539,89 @@ def train_models(df: pd.DataFrame) -> None:
     print(x_train.shape)
     print(y_train.shape)
 
-    create_baseline_decision_tree_regressor(
-        X_train=x_train,
-        y_train=y_train,
-        X_test=x_test,
-        y_test=y_test
-    )
+    # create_baseline_decision_tree_regressor(
+    #     X_train=x_train,
+    #     y_train=y_train,
+    #     X_test=x_test,
+    #     y_test=y_test
+    # )
+    #
+    # create_fine_tuned_decision_tree_regressor(
+    #     X_train=x_train,
+    #     y_train=y_train,
+    #     X_test=x_test,
+    #     y_test=y_test
+    # )
 
-    create_fine_tuned_decision_tree_regressor(
-        X_train=x_train,
-        y_train=y_train,
-        X_test=x_test,
-        y_test=y_test
-    )
+    # create_baseline_random_forest_regressor(
+    #     X_train=x_train,
+    #     y_train=y_train,
+    #     X_test=x_test,
+    #     y_test=y_test
+    # )
+    #
+    # create_fine_tuned_random_forest_regressor(
+    #     X_train=x_train,
+    #     y_train=y_train,
+    #     X_test=x_test,
+    #     y_test=y_test
+    # )
+    #
+    # create_baseline_knn_regressor(
+    #     X_train=x_train,
+    #     y_train=y_train,
+    #     X_test=x_test,
+    #     y_test=y_test
+    # )
+    #
+    # create_fine_tuned_knn_regressor(
+    #     X_train=x_train,
+    #     y_train=y_train,
+    #     X_test=x_test,
+    #     y_test=y_test
+    # )
+    #
+    # create_baseline_xg_boost_regressor(
+    #     X_train=x_train,
+    #     y_train=y_train,
+    #     X_test=x_test,
+    #     y_test=y_test
+    # )
+    #
+    # create_fine_tuned_xg_boost_regressor(
+    #     X_train=x_train,
+    #     y_train=y_train,
+    #     X_test=x_test,
+    #     y_test=y_test
+    # )
 
-    create_baseline_random_forest_regressor(
-        X_train=x_train,
-        y_train=y_train,
-        X_test=x_test,
-        y_test=y_test
-    )
-
-    create_fine_tuned_random_forest_regressor(
-        X_train=x_train,
-        y_train=y_train,
-        X_test=x_test,
-        y_test=y_test
-    )
-
-    create_baseline_knn_regressor(
-        X_train=x_train,
-        y_train=y_train,
-        X_test=x_test,
-        y_test=y_test
-    )
-
-    create_fine_tuned_knn_regressor(
-        X_train=x_train,
-        y_train=y_train,
-        X_test=x_test,
-        y_test=y_test
-    )
-
-    create_baseline_xg_boost_regressor(
-        X_train=x_train,
-        y_train=y_train,
-        X_test=x_test,
-        y_test=y_test
-    )
-
-    create_fine_tuned_xg_boost_regressor(
-        X_train=x_train,
-        y_train=y_train,
-        X_test=x_test,
-        y_test=y_test
-    )
-
-    create_baseline_light_gbm_regressor(
-        X_train=x_train,
-        y_train=y_train,
-        X_test=x_test,
-        y_test=y_test
-    )
-
-    create_fine_tuned_light_gbm_regressor(
-        X_train=x_train,
-        y_train=y_train,
-        X_test=x_test,
-        y_test=y_test
-    )
-
-    create_baseline_lasso_regressor(
-        X_train=x_train,
-        y_train=y_train,
-        X_test=x_test,
-        y_test=y_test
-    )
-
-    create_fine_tuned_lasso_regressor(
-        X_train=x_train,
-        y_train=y_train,
-        X_test=x_test,
-        y_test=y_test
-    )
+    # create_baseline_light_gbm_regressor(
+    #     X_train=x_train,
+    #     y_train=y_train,
+    #     X_test=x_test,
+    #     y_test=y_test
+    # )
+    #
+    # create_fine_tuned_light_gbm_regressor(
+    #     X_train=x_train,
+    #     y_train=y_train,
+    #     X_test=x_test,
+    #     y_test=y_test
+    # )
+    #
+    # create_baseline_lasso_regressor(
+    #     X_train=x_train,
+    #     y_train=y_train,
+    #     X_test=x_test,
+    #     y_test=y_test
+    # )
+    #
+    # create_fine_tuned_lasso_regressor(
+    #     X_train=x_train,
+    #     y_train=y_train,
+    #     X_test=x_test,
+    #     y_test=y_test
+    # )
 
     create_baseline_gbr(
         X_train=x_train,
