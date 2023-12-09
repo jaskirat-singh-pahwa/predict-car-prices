@@ -1,6 +1,6 @@
 car_prices:
   run_type:
-    train: True
+    train: False
     predict:
       user_given_data_test: False
 

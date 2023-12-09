@@ -5,5 +5,21 @@ from data_cleaning import get_cleaned_data
 
 def get_processed_user_input_data(file_path: str) -> pd.DataFrame:
     cleaned_user_data: pd.DataFrame = get_cleaned_data(data_path=file_path)
-    print(cleaned_user_data)
+
+    processed_modelling_data: pd.DataFrame = pd.read_csv(
+        filepath_or_buffer="input/processed/modelling_data/processed_data_for_modelling.csv",
+        encoding="ISO-8859-1"
+    )
+    # columns_not_in_processed_data = cleaned_user_data.columns.difference(processed_modelling_data.columns)
+    # print("-----------", len(columns_not_in_processed_data))
+
+    missing_columns = set(processed_modelling_data.columns) - set(cleaned_user_data.columns)
+    print(len(missing_columns))
+
+    for col in missing_columns:
+        cleaned_user_data[col] = 0  # or any default value you want
+
+    feature_names = processed_modelling_data.columns.tolist()
+    cleaned_user_data = cleaned_user_data[feature_names]
+
     return cleaned_user_data
