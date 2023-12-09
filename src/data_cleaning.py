@@ -227,4 +227,6 @@ def get_cleaned_data(data_path: str) -> pd.DataFrame:
     encoded_used_cars = get_encoded_data(df=used_cars)
     # logger.info(encoded_used_cars.shape)
 
+    encoded_used_cars.to_csv("input/processed/modelling_data/processed_data_for_modelling.csv")
+
     return encoded_used_cars

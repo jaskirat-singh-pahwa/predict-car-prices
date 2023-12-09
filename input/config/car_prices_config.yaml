@@ -2,7 +2,7 @@ car_prices:
   run_type:
     train: True
     predict:
-      user_given_data_test: True
+      user_given_data_test: False
 
 
 train_car_prices:
@@ -15,11 +15,6 @@ train_car_prices:
 
 
 predict_car_prices:
-  user_given_data_path_raw: input/raw/user_data/
-  model: Random_Forest
-  predict_output_path: output/user_data/
-  schema:
-
-
-
-
+  user_given_data_path_raw: input/raw/user_data/raw_user_data.csv
+  model: XG_Boost
+  predict_output_path: output/user_data/predictions.csv
