@@ -161,8 +161,7 @@ def get_encoded_data(df: pd.DataFrame) -> pd.DataFrame:
         "notRepairedDamage"
     ]
 
-    df = pd.get_dummies(df, columns=categorical_columns)
-
+    df = pd.get_dummies(df, columns=categorical_columns, dtype=int)
     return df
 
 
