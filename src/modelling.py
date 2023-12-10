@@ -24,6 +24,12 @@ from logger import get_logger
 warnings.filterwarnings("ignore")
 
 
+"""
+This module is used to train the models and save them in the models folder:
+Here we are training both baseline models and fine-tuned models.
+The hyperparameters have been taken from the phase 2 notebooks.
+"""
+
 score_data_baseline = pd.DataFrame(
     index=[
         "R2_Score",
