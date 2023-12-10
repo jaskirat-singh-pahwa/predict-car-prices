@@ -5,16 +5,17 @@ from typing import Dict
 
 from args import parse_args
 from logger import get_logger
-from runner import run_app
+# from runner import run_app
+from streamlit_dic import run_streamlit_app
 
 pd.set_option("display.max_colwidth", 100)
 logger = get_logger(module_name="main")
 
 
-def main(argv) -> None:
-    args: Dict[str, str] = parse_args(argv)
-    config_file_path: str = args["config_file"]
-    logger.info(f"Config file path given: {config_file_path}")
+def main() -> None:
+    # args: Dict[str, str] = parse_args(argv)
+    # config_file_path: str = args["config_file"]
+    # logger.info(f"Config file path given: {config_file_path}")
 
     # input_type: str = ""  # Take input from UI -> file input or self input
     # logger.info(f"\n\nInput type entered by user: {input_type}")
@@ -30,9 +31,11 @@ def main(argv) -> None:
     # else:
     #     raise Exception("\n\nSorry! Incorrect option is chosen. Available choices ('file_input', 'self_input')!")
 
-    user_input_file_path: str = "" # Take input from UI
-    run_app(config_file_path=config_file_path, user_input_file_path=user_input_file_path)
+    # user_input_file_path: str = ""  # Take input from UI
+    # run_app(config_file_path=config_file_path, user_input_file_path=user_input_file_path)
+    run_streamlit_app()
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    # main(sys.argv[1:])
+    main()
