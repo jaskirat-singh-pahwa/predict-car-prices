@@ -28,6 +28,7 @@ We will perform series of actions in this module on raw dataset:
 """
 
 
+# Loading data from csv to pandas dataframe
 def load_csv_data(input_path: str, columns: Optional[List[str]] = None) -> pd.DataFrame:
     if columns is not None:
         return pd.read_csv(
@@ -40,18 +41,22 @@ def load_csv_data(input_path: str, columns: Optional[List[str]] = None) -> pd.Da
         return pd.read_csv(filepath_or_buffer=input_path, encoding="ISO-8859-1")
 
 
+# Dropping all rows if any of the columns have null value
 def get_data_without_null_values(df: pd.DataFrame) -> pd.DataFrame:
     return df.dropna()
 
 
+# Dropping duplicate records
 def get_data_without_duplicate_records(df: pd.DataFrame) -> pd.DataFrame:
     return df.drop_duplicates()
 
 
+# Changing data type of price column from integer to float
 def get_data_with_resolved_schemas(df: pd.DataFrame) -> pd.DataFrame:
     return df["price"].astype(float, inplace=True)
 
 
+# Removing outliers from the dataframe
 def get_data_without_outliers(
         df: pd.DataFrame,
         columns: List[str],
@@ -78,6 +83,7 @@ def get_data_without_outliers(
     return df
 
 
+# Replacing feature values from German language to English language
 def replace_feature_values(df: pd.DataFrame) -> pd.DataFrame:
     """
         Handling inconsistencies in features -
@@ -100,18 +106,20 @@ def replace_feature_values(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+# Calculating new feature `age_of_car`
 def get_age_of_car(df: pd.DataFrame) -> pd.DataFrame:
     df["lastSeen_year"] = pd.to_datetime(df["lastSeen"]).dt.year
-
     df["age_of_car"] = (df["lastSeen_year"] - df["yearOfRegistration"])
 
     return df
 
 
+# Filtering data to consider only last 10 years of data
 def get_last_10_years_old_cars(df: pd.DataFrame) -> pd.DataFrame:
     return df[df["age_of_car"] <= 10]
 
 
+# Converting some more columns from German to English values
 def get_german_to_english_features(df: pd.DataFrame) -> pd.DataFrame:
     df["name"] = df["name"].str.replace('[^a-zA-Z0-9]', ' ')
     df["seller"] = df["seller"].replace(["privat"], "private")
@@ -129,6 +137,7 @@ def get_german_to_english_features(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+# Scale numeric features
 def get_scaled_data(df: pd.DataFrame) -> pd.DataFrame:
     scaler = MinMaxScaler()
     df[["powerPS_scaled"]] = scaler.fit_transform(df[["powerPS"]])
@@ -138,6 +147,7 @@ def get_scaled_data(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+# One-hot encoding on categorical data
 def get_encoded_data(df: pd.DataFrame) -> pd.DataFrame:
     categorical_columns = [
         "seller",
@@ -156,6 +166,7 @@ def get_encoded_data(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+# main function to get cleaned data
 def get_cleaned_data(data_path: str) -> pd.DataFrame:
     initial_selected_columns: List[str] = [
         "name",
