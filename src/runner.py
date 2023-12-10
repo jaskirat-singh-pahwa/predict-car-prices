@@ -10,10 +10,11 @@ from data_cleaning import (
     get_data_without_duplicate_records,
     get_data_without_outliers,
     get_age_of_car,
-    get_last_10_years_old_cars
+    get_last_10_years_old_cars,
+    # get_cleaned_data
 
 )
-from modelling import train_models
+# from modelling import train_models
 from predictions import get_predicted_output
 from process_user_input_data import get_processed_user_input_data
 
@@ -28,14 +29,8 @@ def parse_config_file(file_path: str):
         return config_data
 
 
-def run_app(user_input_file_path: str, config_file_path=None,) -> pd.DataFrame:
+def run_app(user_input_file_path: str, config_file_path=None) -> pd.DataFrame:
     # config_data = parse_config_file(file_path=config_file_path)
-
-    # user_input_file_path: str = "input/raw/user_data/raw_user_data.csv"  # Take input from UI
-    # raw_user_data: pd.DataFrame = pd.read_csv(
-    #     filepath_or_buffer=user_input_file_path,
-    #     encoding="ISO-8859-1"
-    # )
 
     selected_columns: List[str] = [
         "seller",
@@ -95,4 +90,3 @@ def run_app(user_input_file_path: str, config_file_path=None,) -> pd.DataFrame:
     #     print(cleaned_user_data.shape)
 
     return predictions
-

@@ -1,15 +1,20 @@
-import sys
 import pandas as pd
+# import sys
 
-from typing import Dict
+# from typing import Dict
 
-from args import parse_args
+# from args import parse_args
 from logger import get_logger
 # from runner import run_app
-from streamlit_dic import run_streamlit_app
+from streamlit_app import run_streamlit_app
 
 pd.set_option("display.max_colwidth", 100)
 logger = get_logger(module_name="main")
+
+"""
+This is the main entry point of the project. From here it will call run_streamlit_app and start processing.
+
+"""
 
 
 def main() -> None:
@@ -17,22 +22,8 @@ def main() -> None:
     # config_file_path: str = args["config_file"]
     # logger.info(f"Config file path given: {config_file_path}")
 
-    # input_type: str = ""  # Take input from UI -> file input or self input
-    # logger.info(f"\n\nInput type entered by user: {input_type}")
+    # run_app(config_file_path=config_file_path, user_input_file_path="")
 
-    # if input_type.lower() == "file_input":
-    #     file_input_path: str = ""  # Take file input path from UI
-    #
-    # elif input_type.lower() == "self_input":
-    #     self_input_params = {
-    #         "": ""
-    #     }
-    #
-    # else:
-    #     raise Exception("\n\nSorry! Incorrect option is chosen. Available choices ('file_input', 'self_input')!")
-
-    # user_input_file_path: str = ""  # Take input from UI
-    # run_app(config_file_path=config_file_path, user_input_file_path=user_input_file_path)
     run_streamlit_app()
 
 

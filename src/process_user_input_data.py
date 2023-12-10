@@ -3,6 +3,13 @@ import pandas as pd
 from data_cleaning import get_cleaned_data
 
 
+"""
+This module is for processing user input data and making it compatible with the data on which 
+the training has been done.
+
+"""
+
+
 def get_processed_user_input_data(file_path: str) -> pd.DataFrame:
     cleaned_user_data: pd.DataFrame = get_cleaned_data(data_path=file_path)
 
