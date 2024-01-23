@@ -3,7 +3,7 @@ from typing import Optional, List
 
 from sklearn.preprocessing import MinMaxScaler
 
-from logger import get_logger
+from src.logger import get_logger
 
 
 pd.set_option("display.max_colwidth", 100)
