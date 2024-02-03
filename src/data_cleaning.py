@@ -53,14 +53,15 @@ def get_data_without_duplicate_records(df: pd.DataFrame) -> pd.DataFrame:
 
 # Changing data type of price column from integer to float
 def get_data_with_resolved_schemas(df: pd.DataFrame) -> pd.DataFrame:
-    return df["price"].astype(float, inplace=True)
+    df["price"] = df["price"].astype("float")
+    return df
 
 
 # Removing outliers from the dataframe
 def get_data_without_outliers(
         df: pd.DataFrame,
         columns: List[str],
-        factor=1.5
+        factor=1.0
 ) -> pd.DataFrame:
     for column in columns:
         # Calculate the first and third quartiles
@@ -69,6 +70,7 @@ def get_data_without_outliers(
 
         # Calculate the IQR (Inter quartile Range)
         iqr = q3 - q1
+        print(q1, iqr)
 
         # Define the lower and upper bounds for outlier detection
         lower_bound = q1 - factor * iqr
