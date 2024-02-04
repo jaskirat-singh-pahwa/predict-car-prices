@@ -66,7 +66,7 @@ def test_get_data_without_outliers() -> None:
     )
 
     expected_result: pd.DataFrame = pd.read_csv("test/data_cleaning/expected_without_outliers_records.csv")
-    print(actual_result.head())
+
     assert_frame_equal(
         actual_result.reset_index(drop=True),
         expected_result.reset_index(drop=True)
@@ -74,11 +74,32 @@ def test_get_data_without_outliers() -> None:
 
 
 def test_replace_feature_values() -> None:
-    pass
+    sample_df: pd.DataFrame = pd.read_csv("test/data_cleaning/sample_replace_values_records.csv")
+    actual_result: pd.DataFrame = replace_feature_values(
+        df=sample_df
+    )
+
+    expected_result: pd.DataFrame = pd.read_csv("test/data_cleaning/expected_replace_values_records.csv")
+
+    assert_frame_equal(
+        actual_result.reset_index(drop=True),
+        expected_result.reset_index(drop=True)
+    )
 
 
 def test_get_age_of_car() -> None:
-    pass
+    sample_df: pd.DataFrame = pd.read_csv("test/data_cleaning/sample_records_without_age.csv")
+    actual_result: pd.DataFrame = get_age_of_car(
+        df=sample_df
+    )
+
+    expected_result: pd.DataFrame = pd.read_csv("test/data_cleaning/expected_records_with_age.csv")
+
+    assert_frame_equal(
+        actual_result.reset_index(drop=True),
+        expected_result.reset_index(drop=True),
+        check_dtype=False
+    )
 
 
 def test_get_last_10_years_old_cars() -> None:

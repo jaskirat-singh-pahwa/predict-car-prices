@@ -99,11 +99,33 @@ def replace_feature_values(df: pd.DataFrame) -> pd.DataFrame:
                                                 .replace(old_value, new_value)
         return df
 
-    df = replace_values(df_with_german_values=df, feature_name="offerType", old_value="Gesuch", new_value="request")
+    df = replace_values(
+        df_with_german_values=df,
+        feature_name="offerType",
+        old_value="Gesuch",
+        new_value="request"
+    )
 
-    df = replace_values(df_with_german_values=df, feature_name="offerType", old_value="Angebot", new_value="listing")
-    df = replace_values(df_with_german_values=df, feature_name="notRepairedDamage", old_value="ja", new_value="yes")
-    df = replace_values(df_with_german_values=df, feature_name="notRepairedDamage", old_value="nein", new_value="no")
+    df = replace_values(
+        df_with_german_values=df,
+        feature_name="offerType",
+        old_value="Angebot",
+        new_value="listing"
+    )
+
+    df = replace_values(
+        df_with_german_values=df,
+        feature_name="notRepairedDamage",
+        old_value="ja",
+        new_value="yes"
+    )
+
+    df = replace_values(
+        df_with_german_values=df,
+        feature_name="notRepairedDamage",
+        old_value="nein",
+        new_value="no"
+    )
 
     return df
 
