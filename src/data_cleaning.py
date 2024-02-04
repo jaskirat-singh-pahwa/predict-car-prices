@@ -145,7 +145,7 @@ def get_last_10_years_old_cars(df: pd.DataFrame) -> pd.DataFrame:
 
 # Converting some more columns from German to English values
 def get_german_to_english_features(df: pd.DataFrame) -> pd.DataFrame:
-    df["name"] = df["name"].str.replace('[^a-zA-Z0-9]', ' ')
+    df["name"] = df["name"].str.replace(r"[^a-zA-Z0-9]", " ", regex=True)
     df["seller"] = df["seller"].replace(["privat"], "private")
     df["seller"] = df["seller"].replace(["gewerblich"], "commercial")
 
