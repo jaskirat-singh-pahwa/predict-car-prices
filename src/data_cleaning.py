@@ -3,7 +3,7 @@ from typing import Optional, List
 
 from sklearn.preprocessing import MinMaxScaler
 
-from logger import get_logger
+from src.logger import get_logger
 
 
 pd.set_option("display.max_colwidth", 100)
@@ -53,14 +53,15 @@ def get_data_without_duplicate_records(df: pd.DataFrame) -> pd.DataFrame:
 
 # Changing data type of price column from integer to float
 def get_data_with_resolved_schemas(df: pd.DataFrame) -> pd.DataFrame:
-    return df["price"].astype(float, inplace=True)
+    df["price"] = df["price"].astype("float")
+    return df
 
 
 # Removing outliers from the dataframe
 def get_data_without_outliers(
         df: pd.DataFrame,
         columns: List[str],
-        factor=1.5
+        factor=1.0
 ) -> pd.DataFrame:
     for column in columns:
         # Calculate the first and third quartiles
@@ -69,6 +70,7 @@ def get_data_without_outliers(
 
         # Calculate the IQR (Inter quartile Range)
         iqr = q3 - q1
+        print(q1, iqr)
 
         # Define the lower and upper bounds for outlier detection
         lower_bound = q1 - factor * iqr
@@ -97,11 +99,33 @@ def replace_feature_values(df: pd.DataFrame) -> pd.DataFrame:
                                                 .replace(old_value, new_value)
         return df
 
-    df = replace_values(df_with_german_values=df, feature_name="offerType", old_value="Gesuch", new_value="request")
+    df = replace_values(
+        df_with_german_values=df,
+        feature_name="offerType",
+        old_value="Gesuch",
+        new_value="request"
+    )
 
-    df = replace_values(df_with_german_values=df, feature_name="offerType", old_value="Angebot", new_value="listing")
-    df = replace_values(df_with_german_values=df, feature_name="notRepairedDamage", old_value="ja", new_value="yes")
-    df = replace_values(df_with_german_values=df, feature_name="notRepairedDamage", old_value="nein", new_value="no")
+    df = replace_values(
+        df_with_german_values=df,
+        feature_name="offerType",
+        old_value="Angebot",
+        new_value="listing"
+    )
+
+    df = replace_values(
+        df_with_german_values=df,
+        feature_name="notRepairedDamage",
+        old_value="ja",
+        new_value="yes"
+    )
+
+    df = replace_values(
+        df_with_german_values=df,
+        feature_name="notRepairedDamage",
+        old_value="nein",
+        new_value="no"
+    )
 
     return df
 
@@ -121,7 +145,7 @@ def get_last_10_years_old_cars(df: pd.DataFrame) -> pd.DataFrame:
 
 # Converting some more columns from German to English values
 def get_german_to_english_features(df: pd.DataFrame) -> pd.DataFrame:
-    df["name"] = df["name"].str.replace('[^a-zA-Z0-9]', ' ')
+    df["name"] = df["name"].str.replace(r"[^a-zA-Z0-9]", " ", regex=True)
     df["seller"] = df["seller"].replace(["privat"], "private")
     df["seller"] = df["seller"].replace(["gewerblich"], "commercial")
 
@@ -140,9 +164,9 @@ def get_german_to_english_features(df: pd.DataFrame) -> pd.DataFrame:
 # Scale numeric features
 def get_scaled_data(df: pd.DataFrame) -> pd.DataFrame:
     scaler = MinMaxScaler()
+    df[["age_of_car_scaled"]] = scaler.fit_transform(df[["age_of_car"]])
     df[["powerPS_scaled"]] = scaler.fit_transform(df[["powerPS"]])
     df[["kilometer_scaled"]] = scaler.fit_transform(df[["kilometer"]])
-    df[["age_of_car_scaled"]] = scaler.fit_transform(df[["age_of_car"]])
 
     return df
 

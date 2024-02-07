@@ -1,0 +1,7 @@
+brand,name,age,price,seller,vehicleType,fuelType,gearbox
+Mercedes,A class,2,50000,private,others,benzine,manual
+BMW,Series 7,3,400000,private,others,others,manual
+Audi,A 8,2,35000,private,others,benzine,automatic
+Dodge,Challenger,4,30000,commercial,others,benzine,manual
+Cadillac,ATS,1,60000,commercial,others,electric,automatic
+Porsche,Boxster,1,1000,commercial,others,electric,automatic

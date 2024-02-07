@@ -1,0 +1,7 @@
+brand,model,age,offerType,notRepairedDamage
+Mercedes,A class,2,Gesuch,no
+BMW,Series 7,3,Angebot,yes
+Audi,A 8,2,Gesuch,nein
+Dodge,Challenger,4,Angebot,ja
+Cadillac,ATS,1,listing,nein
+Porsche,Boxster,1,request,ja
