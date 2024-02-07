@@ -1,0 +1,5 @@
+brand,model,age,price,seller,offerType,abtest,vehicleType,gearbox,fuelType,notRepairedDamage
+Audi,A 8,2,35000,commercial,request,test,others,automatic,electric,no
+Dodge,Challenger,4,30000,private,request,control,others,manual,benzine,no
+Cadillac,ATS,1,60000,commercial,listing,test,others,automatic,benzine,no
+Porsche,Boxster,1,65000,commercial,request,control,others,automatic,others,yes

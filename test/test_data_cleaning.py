@@ -126,7 +126,6 @@ def test_get_german_to_english_features() -> None:
     expected_result: pd.DataFrame = pd.read_csv("test/data_cleaning/unit_tests/expected_records_without_german_values"
                                                 ".csv")
 
-    print(actual_result.head())
     assert_frame_equal(
         actual_result.reset_index(drop=True),
         expected_result.reset_index(drop=True)
@@ -134,11 +133,31 @@ def test_get_german_to_english_features() -> None:
 
 
 def test_get_scaled_data() -> None:
-    pass
+    sample_df: pd.DataFrame = pd.read_csv("test/data_cleaning/unit_tests/sample_unscaled_data.csv")
+    actual_result: pd.DataFrame = get_scaled_data(
+        df=sample_df
+    )
+
+    expected_result: pd.DataFrame = pd.read_csv("test/data_cleaning/unit_tests/expected_scaled_data.csv")
+
+    assert_frame_equal(
+        actual_result.reset_index(drop=True),
+        expected_result.reset_index(drop=True)
+    )
 
 
 def test_get_encoded_data() -> None:
-    pass
+    sample_df: pd.DataFrame = pd.read_csv("test/data_cleaning/unit_tests/sample_unencoded_records.csv")
+    actual_result: pd.DataFrame = get_encoded_data(
+        df=sample_df
+    )
+
+    expected_result: pd.DataFrame = pd.read_csv("test/data_cleaning/unit_tests/expected_encoded_data.csv")
+    print(actual_result.columns)
+    assert_frame_equal(
+        actual_result.reset_index(drop=True),
+        expected_result.reset_index(drop=True)
+    )
 
 
 def test_get_cleaned_data() -> None:

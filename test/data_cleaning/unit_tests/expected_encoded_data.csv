@@ -1,0 +1,5 @@
+age,price,seller_commercial,seller_private,offerType_listing,offerType_request,abtest_control,abtest_test,vehicleType_others,gearbox_automatic,gearbox_manual,model_A 8,model_ATS,model_Boxster,model_Challenger,fuelType_benzine,fuelType_electric,fuelType_others,brand_Audi,brand_Cadillac,brand_Dodge,brand_Porsche,notRepairedDamage_no,notRepairedDamage_yes
+2,35000,1,0,0,1,0,1,1,1,0,1,0,0,0,0,1,0,1,0,0,0,1,0
+4,30000,0,1,0,1,1,0,1,0,1,0,0,0,1,1,0,0,0,0,1,0,1,0
+1,60000,1,0,1,0,0,1,1,1,0,0,1,0,0,1,0,0,0,1,0,0,1,0
+1,65000,1,0,0,1,1,0,1,1,0,0,0,1,0,0,0,1,0,0,0,1,0,1

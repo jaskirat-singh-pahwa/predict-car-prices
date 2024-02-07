@@ -164,9 +164,9 @@ def get_german_to_english_features(df: pd.DataFrame) -> pd.DataFrame:
 # Scale numeric features
 def get_scaled_data(df: pd.DataFrame) -> pd.DataFrame:
     scaler = MinMaxScaler()
+    df[["age_of_car_scaled"]] = scaler.fit_transform(df[["age_of_car"]])
     df[["powerPS_scaled"]] = scaler.fit_transform(df[["powerPS"]])
     df[["kilometer_scaled"]] = scaler.fit_transform(df[["kilometer"]])
-    df[["age_of_car_scaled"]] = scaler.fit_transform(df[["age_of_car"]])
 
     return df
 
