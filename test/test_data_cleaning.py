@@ -154,7 +154,7 @@ def test_get_encoded_data() -> None:
     )
 
     expected_result: pd.DataFrame = pd.read_csv("test/data_cleaning/unit_tests/expected_encoded_data.csv")
-    print(actual_result.columns)
+
     assert_frame_equal(
         actual_result.reset_index(drop=True),
         expected_result.reset_index(drop=True)
@@ -168,8 +168,7 @@ def test_get_cleaned_data() -> None:
     )
 
     expected_result: pd.DataFrame = pd.read_csv("test/data_cleaning/integrated_test/expected_clean_car_records.csv")
-    print(actual_result.columns)
-    print(len(actual_result))
+
     assert_frame_equal(
         actual_result.reset_index(drop=True),
         expected_result.reset_index(drop=True)
