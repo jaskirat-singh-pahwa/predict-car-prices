@@ -16,6 +16,7 @@ from src.data_cleaning import (
 )
 
 
+# Unit tests
 def test_get_data_without_null_values() -> None:
     sample_df: pd.DataFrame = pd.read_csv("test/data_cleaning/unit_tests/sample_null_records.csv")
     actual_result: pd.DataFrame = get_data_without_null_values(
@@ -160,5 +161,16 @@ def test_get_encoded_data() -> None:
     )
 
 
+# Integration test
 def test_get_cleaned_data() -> None:
-    pass
+    actual_result: pd.DataFrame = get_cleaned_data(
+        data_path="test/data_cleaning/integrated_test/sample_uncleaned_car_records.csv"
+    )
+
+    expected_result: pd.DataFrame = pd.read_csv("test/data_cleaning/integrated_test/expected_clean_car_records.csv")
+    print(actual_result.columns)
+    print(len(actual_result))
+    assert_frame_equal(
+        actual_result.reset_index(drop=True),
+        expected_result.reset_index(drop=True)
+    )

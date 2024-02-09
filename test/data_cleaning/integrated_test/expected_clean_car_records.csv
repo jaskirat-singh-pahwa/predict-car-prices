@@ -1,0 +1,4 @@
+age_of_car_scaled,powerPS_scaled,kilometer_scaled,price,seller_commercial,seller_private,offerType_listing,offerType_request,abtest_control,abtest_test,vehicleType_limousine,vehicleType_others,gearbox_automatic,gearbox_manual,model_1er,model_Challenger2007,model_golf,fuelType_benzine,fuelType_electric,brand_Dodge,brand_bmw,brand_volkswagen,notRepairedDamage_no,notRepairedDamage_yes
+0.1428571429,1,0.08333333333,14300,0,1,1,0,1,0,1,0,1,0,1,0,0,1,0,0,1,0,1,0
+0,0.6351351351,1,19000,1,0,0,1,0,1,1,0,0,1,0,0,1,1,0,0,0,1,1,0
+1,0,0,20000,1,0,0,1,0,1,0,1,1,0,0,1,0,0,1,1,0,0,0,1
