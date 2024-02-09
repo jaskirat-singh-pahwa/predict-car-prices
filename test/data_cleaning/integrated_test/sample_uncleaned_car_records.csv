@@ -1,0 +1,7 @@
+name,seller,offerType,price,abtest,vehicleType,yearOfRegistration,gearbox,powerPS,model,kilometer,fuelType,brand,notRepairedDamage,dateCreated,postalCode,lastSeen
+Polo_6n_Ohne_TÜV_abzugeben,privat,Gesuch,15000,control,,1995,manuell,45,polo,150000,,volkswagen,nein,2016-03-29 00:00:00,38110,2016-04-06 21:45:50
+BMW_114i,privat,Angebot,14300,control,limousine,2013,automatik,102,1er,40000,benzin,bmw,nein,2016-03-10 00:00:00,45894,2016-04-05 19:45:56
+Volkswagen_Golf_1.4,gewerblich,Gesuch,19000,test,limousine,2014,manuell,75,golf,150000,benzin,volkswagen,nein,2016-03-20 00:00:00,24109,2016-03-28 20:16:52
+VW_Golf_3_GT__1_8L__90_PS_4_tuerig__Tuev_03/2017__AHK__Euro_2,privat,Angebot,65,control,limousine,2015,manuell,90,golf,150000,elektro,volkswagen,nein,2016-03-07 00:00:00,37186,2016-03-08 11:46:01
+Challenger,gewerblich,Gesuch,20000,test,andere,2007,automatik,28,Challenger2007,30000,elektro,Dodge,ja,2016-03-07 00:00:00,37185,2016-03-08 14:46:01
+Volkswagen_Golf_1.4,gewerblich,Gesuch,19000,test,limousine,2014,manuell,75,golf,150000,benzin,volkswagen,nein,2016-03-20 00:00:00,24109,2016-03-28 20:16:52
